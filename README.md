@@ -1,1 +1,1 @@
-Contains the necessary infrastructure to deploy the kanban application
+Configures infrastructure to deploy applications on an eks cluster with fargate profiles
