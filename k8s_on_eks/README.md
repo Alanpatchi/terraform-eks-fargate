@@ -9,9 +9,10 @@ Configures infrastructure that
 
 The following has to be done manually, as of now, for k8s/5-ingress.yaml to handle AWS issued TLS certificates within k8s's ingress :
 1. Perform terraform init -> terraform apply
-2. Do the changes as mentioned in 14-aws-tls-certificate.tf, and once the certificate is issued 
+2. Do the changes as mentioned in "14-aws-tls-certificate.tf", and once the certificate is issued 
 3. Perform [Kubectl config](#kubectl-config)
 4. Perform "kubectl apply -f k8s/"
+5. Do the changes as mentioned in "5-ingress.yaml", to access the application externally.
 
 # KUBECTL CONFIG:
 1. Install kubectl cli

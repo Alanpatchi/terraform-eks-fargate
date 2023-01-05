@@ -2,6 +2,8 @@
 # 1. the provision of "13-aws-lb-controller.tf"
 # 2. arn of the validated certificate in "14-aws-tls-certificate.tf" - see the file for more
 
+# TODO, manually add the DNS CNAME record for every spec.rules[*].host value
+
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
