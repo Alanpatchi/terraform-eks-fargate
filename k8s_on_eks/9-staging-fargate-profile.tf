@@ -1,3 +1,5 @@
+# TODO move to separate module for application development
+
 resource "aws_eks_fargate_profile" "staging" {
   cluster_name           = aws_eks_cluster.cluster.name
   fargate_profile_name   = "staging"
@@ -13,4 +15,7 @@ resource "aws_eks_fargate_profile" "staging" {
   selector {
     namespace = "staging"
   }
+
+  depends_on = [aws_iam_role_policy_attachment.eks-fargate-profile]
+
 }

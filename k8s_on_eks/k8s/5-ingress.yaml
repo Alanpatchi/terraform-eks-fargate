@@ -1,0 +1,30 @@
+# this k8s ingress depends on
+# 1. the provision of "13-aws-lb-controller.tf"
+# 2. arn of the validated certificate in "14-aws-tls-certificate.tf" - see the file for more
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: php-apache
+  namespace: staging
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-1:376031781971:certificate/f0ce29af-cca3-4745-9e45-d9f093063027
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
+    alb.ingress.kubernetes.io/ssl-redirect: '443'
+spec:
+  ingressClassName: alb
+  rules:
+    - host: php-apache.alanpatchi.com
+      http:
+        paths:
+          - path: /
+            pathType: Exact
+            backend:
+              service:
+                name: php-apache
+                port:
+                  number: 80
+

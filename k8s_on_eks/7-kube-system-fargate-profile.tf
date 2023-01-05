@@ -33,6 +33,9 @@ resource "aws_eks_fargate_profile" "kube-system" {
   selector {
     namespace = "kube-system"
   }
+
+  depends_on = [aws_iam_role_policy_attachment.eks-fargate-profile]
+
 }
 
 

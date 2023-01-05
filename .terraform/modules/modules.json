@@ -1,1 +1,1 @@
-{"Modules":[{"Key":"k8s","Source":"./k8s","Dir":"k8s"},{"Key":"","Source":"","Dir":"."}]}
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"k8s_on_eks","Source":"./k8s_on_eks","Dir":"k8s_on_eks"},{"Key":"k8s","Source":"./k8s","Dir":"k8s"}]}
